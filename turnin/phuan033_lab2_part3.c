@@ -26,16 +26,16 @@ while(1) {
 		// 1) Read input
 		tmpA =(PINA & 0x01) ;// 0001
 		tmpC = (PINA & 0x02) >> 1; //0010
-		tmpD = (PINA & 0x04) >> 2; //0100
+		tmpD = (PINA & 0x04) >> 2; //0100		
 		tmpE = (PINA & 0x08) >> 3; //1000
 		// 2) Perform computation
 		// if PA is 01 then PB is 1;
 		tmpB = tmpA + tmpC + tmpD + tmpE;
 		checkifF = tmpB;
-	
+															
 		if(checkifF == 0x04)
 		{	
-			tmpB = 0x8F;
+			tmpB = 0x80;
 			PORTC = tmpB;
 		}
 		else
@@ -43,7 +43,6 @@ while(1) {
 			tmpB = 0x04 - tmpB;
 			PORTC = tmpB;
 		}
-	
-	} 																		 												 					return 0;
-	 																		 												 					}
+
+	} 																		 									return 0;																									}
 
